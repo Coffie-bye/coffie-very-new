@@ -1,0 +1,570 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner {
+    position: relative; /* Allows positioning of child elements */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+    url("The Best Photo Editing Software for Macs in 2024.jpg");
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+   max-height: 60px;/*Adjust based on your desired size*/
+   width: auto;/*Maintain aspect ratio*/
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;/*Fix: Start with width 0*/
+    background: #009880;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;/* Hover effect: full width*/
+}
+
+.home {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;/* Fix: Make text visible on dark background */
+}
+
+.home h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+button {
+    width:200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover span {
+    border: 0;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Adjust as needed */
+}
+
+.about {
+    flex: 1;
+    padding: 20px;
+    text-align: left; /* Ensures text is aligned to the left */
+}
+
+.about-image {
+    flex: 1;
+    padding: 20px;
+    text-align: right; /* Ensures the image is on the right side */
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Makes the image round */
+    border: 5px solid black; /* Adds a black border around the image */
+    object-fit: cover; /* Ensures the image fits inside the circle */
+    width: 300px; /* Adjust as needed for size */
+    height: 300px; /* Adjust to match the width for a perfect circle */
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-image {
+        margin-bottom: 20px;
+        text-align: center; /* Center image for smaller screens */
+    }
+    
+    .about-image img {
+        width: 200px; /* Smaller image for mobile */
+        height: 200px; /* Smaller image for mobile */
+    }
+}
+
+/* General styling for the service section */
+.service-section {
+    background-color: #f9f9f9; /* Light background */
+    padding: 50px 20px; /* Spacing for the section */
+    text-align: center;
+}
+
+.service-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+}
+
+.services-intro {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666; /* Lighter text color for intro */
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the list items */
+    flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.service-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 200px; /* Make the items responsive */
+    max-width: 300px; /* Limit the width of each item */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-section p {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Styling for the button */
+.button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .service-item {
+        flex: 1 1 100%; /* Make the items full width on smaller screens */
+        max-width: 100%; /* Adjust max-width */
+    }
+
+    .service-section {
+        padding: 30px 10px;
+    }
+}
+
+/* Testimonials Section */
+#testimonials {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#testimonials p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-image img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.testimonial-info {
+    text-align: center;
+}
+
+.testimonial-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.testimonial-info p {
+    font-style: italic;
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.testimonial-info span {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* Testimonial submission form */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #4cae4c;
+}
+
+/* Responsive styling */
+@media (min-width: 768px) {
+    .testimonial {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .testimonial-image {
+        margin-right: 20px;
+    }
+
+    .testimonial-info {
+        text-align: left;
+    }
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f1f1f1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#contact img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.footer {
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    transition: background-color 0.3s ease;
+}
+
+.footer a:hover {
+    background-color: #4cae4c;
+}
+
+/* Social Media Links */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-media a img {
+    width: 24px;
+    height: 24px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.2);
+}
+
+/* Contact Information */
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Back to Home Button */
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #5cb85c;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #4cae4c;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #contact {
+        text-align: left;
+    }
+
+    .social-media {
+        justify-content: flex-start;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .contact-info p {
+        margin-bottom: 0;
+    }
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #009688;
+}
+
+.carousel {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 20px;
+}
+
+.testimonial {
+    flex: 0 0 100%; /* Each slide takes up the full width */
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 20px;
+}
+
+.carousel-button.next {
+    right: 20px;
+}
